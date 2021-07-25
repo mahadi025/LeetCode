@@ -4,27 +4,39 @@ using namespace std;
 class Solution {
 public:
     bool isValid(string s) {
-      stack<char>v;
+      stack<char>stk;
       int l=s.length();
-      for(int i=0;i<l;i++) {
-          if(s[i]=='('||s[i]=='{'||s[i]=='['){
-            v.push(s[i]);
+      char top;
+      for(int i=0;i<l;i++){
+        if(s[i]=='('||s[i]=='{'||s[i]=='['){
+          stk.push(s[i]);
+        }
+        else{
+          if(stk.empty()){
+            return false;
           }
-          else if(s[i]==')'||s[i]=='}'||s[i]==']'){
-            v.pop();
+          else{
+            top=stk.top();
+            if((s[i]==')'&&top=='(')||(s[i]=='}'&&top=='{')||s[i]==']'&&top=='['){
+              stk.pop();
+            }
+            else{
+              return false;
+            }
           }
+        }
       }
-      if(!v.empty()){
-          return true;
+      if(stk.empty()){
+        return true;
       }
       else{
-          return false;
-      }  
+        return false;
+      }
     }
 };
 
 int main(){
     Solution s;
-    string str="()";
+    string str="({)}";
     cout<<s.isValid(str);
 }
