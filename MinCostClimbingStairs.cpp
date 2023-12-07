@@ -8,8 +8,8 @@ public:
     {
         int n = cost.size() + 1;
         int dp[n + 2];
-        dp[2] = 0;
         dp[1] = 0;
+        dp[2] = 0;
 
         for (int i = 3; i <= n; i++)
         {
@@ -23,6 +23,6 @@ public:
 int main()
 {
     Solution s;
-    vector<int> cost = {1, 100, 1, 1, 1, 100, 1, 1, 100, 1};
+    vector<int> cost = {10, 15, 20};
     cout << s.minCostClimbingStairs(cost);
 }
