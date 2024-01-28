@@ -1,21 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
-
-/*
- * Forward declaration of guess API.
- * @param  num   your guess
- * @return 	     -1 if num is higher than the picked number
- *			      1 if num is lower than the picked number
- *               otherwise return 0
- * int guess(int num);
- */
-
 class Solution
 {
 public:
     int guess(int x)
     {
-        return -1; // Demo guess() so that i dont get any error!!!. The actual guess function is implemented in the LeetCode..
+        return -1;
     }
     int guessNumber(int n)
     {

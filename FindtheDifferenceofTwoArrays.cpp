@@ -4,7 +4,7 @@ using namespace std;
 class Solution
 {
 public:
-    std::vector<int> getDistinct(std::vector<int> &nums) // To get the distinct value
+    std::vector<int> getDistinct(std::vector<int> &nums)
     {
         std::sort(nums.begin(), nums.end());
         auto last = std::unique(nums.begin(), nums.end());
